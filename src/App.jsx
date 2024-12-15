@@ -1,10 +1,10 @@
 import React from "react";
-import CustomButton from "./components/CustomButton";
+import Person from "./components/counter/Person";
 
 const App = () => {
   return (
     <div style={{ display: "flex", marginBlockEnd: "2rem", flexWrap: "wrap" }}>
-      <CustomButton />
+      <Person />
     </div>
   );
 };
