@@ -1,61 +1,33 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { getAnimalName } from "../../utils/utils";
 
 const Animal = () => {
-  const [animalName, setAnimalName] = useState("Lion");
-  const [animalType, setAnimalType] = useState("wild");
-
+  const [text, setText] = useState("random text");
+  const [text2, setText2] = useState("second text");
   return (
     <Box>
-      <Typography
-        variant="h3"
-        color="#64dcb0"
-        fontFamily={"serif"}
-        marginBottom={"2rem"}
-      >
-        {getAnimalName(animalName, animalType)}
-      </Typography>
-      <Button
-        variant="contained"
-        color="secondary"
-        onClick={() => {
-          setAnimalName("Lion");
-          setAnimalType("wild");
-        }}
-      >
-        Lion
-      </Button>
-      <Button
-        variant="contained"
-        color="info"
-        onClick={() => {
-          setAnimalName("Dog");
-          setAnimalType("domestic");
-        }}
-      >
-        Dog
-      </Button>
-      <Button
-        variant="contained"
-        color="inherit"
-        onClick={() => {
-          setAnimalName("Tiger");
-          setAnimalType("wild");
-        }}
-      >
-        Tiger
-      </Button>
-      <Button
-        variant="contained"
-        color="success"
-        onClick={() => {
-          setAnimalName("Cat");
-          setAnimalType("domestic");
-        }}
-      >
-        Cat
-      </Button>
+      <Box>
+        <Typography variant="h3">{text}</Typography>
+        <TextField
+          label="Type anything..."
+          color="success"
+          onChange={(e) => {
+            setText(e.target.value);
+          }}
+        ></TextField>
+      </Box>
+      <Box>
+        <Typography variant="h3" color="secondary" fontFamily={"fantasy"}>
+          {text2}
+        </Typography>
+        <TextField
+          label="Type something"
+          color="info"
+          onChange={(e) => {
+            setText2(e.target.value);
+          }}
+        ></TextField>
+      </Box>
     </Box>
   );
 };
