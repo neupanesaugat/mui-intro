@@ -39,7 +39,7 @@ const Actors = () => {
                 onClick={() => {
                   const itemId = item.id;
                   const newArray = actors.filter((item, index, filter) => {
-                    return item.id !== itemId;
+                    return item.id !== itemId; //? Only actors allowed whose id is not equal to item's id(clicked id)
                   });
                   setActors(newArray);
                 }}
